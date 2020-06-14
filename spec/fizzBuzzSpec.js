@@ -16,8 +16,8 @@ describe("fizzBuzz", function() {
     });
     //Divisible by 3 and 5
     it("should return: \"FizzBuzz\"", function() {
-        //20 is divisible by both 3 and 5
-        expect(fizzBuzz(20)).toBe("FizzBuzz");
+        //15 is divisible by both 3 and 5
+        expect(fizzBuzz(15)).toBe("FizzBuzz");
     });
 
     //Not Divisible by 3 or 5
@@ -28,11 +28,6 @@ describe("fizzBuzz", function() {
 
     //Incorrect input
     it("should throw error \"incorrect input!\"", function() {
-        expect(fizzBuzz("Furball")).toThrow("incorrect input!");
-    });
-
-    //No Input
-    it("should throw error \"incorrect input!\"", function() {
-        expect(fizzBuzz()).toThrow("incorrect input!");
+        expect(fizzBuzz).toThrow(Error("incorrect input!"));
     });
 });
