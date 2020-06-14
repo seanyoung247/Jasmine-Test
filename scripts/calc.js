@@ -11,6 +11,15 @@ Calculator.prototype.add = function(number) {
     }
 }
 
+//Subtract number passed from value 
+Calculator.prototype.sub = function(number) {
+    if (typeof(number)=="number") {
+        this.value -= number;
+    } else {
+        alert("Error!");
+    }
+}
+
 //Sets value to number passed
 Calculator.prototype.set = function(number) {
     if (typeof(number) == "number")

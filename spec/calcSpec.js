@@ -6,12 +6,12 @@ describe("Calculator", function() {
     //describes the tests for the Calculator.add() function
     describe("Addition tests", function() {
         it("should return 42", function() {
-            calc.add(20);
+            calc.set(20);
             calc.add(22);
             expect(calc.value).toBe(42);
         });
         it("should return 26", function() {
-            calc.add(7);
+            calc.set(7);
             calc.add(19);
             expect(calc.value).toBe(26);
         });
@@ -23,18 +23,24 @@ describe("Calculator", function() {
     });
 
     //describes the tests for the Calculator.sub() function
- /*   describe("Subtration tests", function() {
+    describe("Subtration tests", function() {
         //correct return if minuend is greater than subtrahend
         it("should return 5", function() {
-
+            calc.set(10);
+            calc.sub(5);
+            expect(calc.value).toBe(5);
         });
         //correct return if minuend and subtrahend are equal
         it("should return 0", function() {
-
+            calc.set(5);
+            calc.sub(5);
+            expect(calc.value).toBe(0);
         });
         //correct return if minuend is smaller than subtrahend
         it("should return -5", function() {
-
+            calc.set(5);
+            calc.sub(10);
+            expect(calc.value).toBe(-5);
         });
         //non-number parameters
         it("should return an error if we don't supply numbers", function() {
@@ -42,7 +48,7 @@ describe("Calculator", function() {
             calc.sub("Hitchhikers");
             expect(window.alert).toHaveBeenCalledWith("Error!");
         });
-    });*/
+    });
     //describes the tests for the Calculator.multiply() function
     //describes the tests for the Calculator.divide() function
 
