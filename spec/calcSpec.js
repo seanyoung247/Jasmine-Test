@@ -22,12 +22,50 @@ describe("Calculator", function() {
         });
     });
 
+    //describes the tests for the Calculator.sub() function
+ /*   describe("Subtration tests", function() {
+        //correct return if minuend is greater than subtrahend
+        it("should return 5", function() {
+
+        });
+        //correct return if minuend and subtrahend are equal
+        it("should return 0", function() {
+
+        });
+        //correct return if minuend is smaller than subtrahend
+        it("should return -5", function() {
+
+        });
+        //non-number parameters
+        it("should return an error if we don't supply numbers", function() {
+            spyOn(window, "alert");
+            calc.sub("Hitchhikers");
+            expect(window.alert).toHaveBeenCalledWith("Error!");
+        });
+    });*/
+    //describes the tests for the Calculator.multiply() function
+    //describes the tests for the Calculator.divide() function
+
     //describes the tests for the Calculator.clear() function
     describe("Clear tests", function() {
         it("should clear Calculator.value", function() {
             calc.add(10);
             calc.clear();
             expect(calc.value).toBe(0);
+        });
+    });
+
+    //describes the tests for the Calculator.Set() function
+    describe("Set tests", function() {
+        it("should be 5", function() {
+            calc.set(5);
+            expect(calc.value).toBe(5);
+        });
+        //non-number parameters
+        it("should return an error if we don't supply numbers", function() {
+            spyOn(window, "alert");
+            calc.set("Hitchhikers");
+            expect(window.alert).toHaveBeenCalledWith("Error!");
         });
     });
 });
