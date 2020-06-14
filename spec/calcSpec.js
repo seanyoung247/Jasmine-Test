@@ -1,5 +1,7 @@
 describe("Calculator", function() {
-    var calc = new Calculator();
+    beforeEach(function() {
+        calc = new Calculator;
+    })
 
     //describes the tests for the Calculator.add() function
     describe("Addition tests", function() {
@@ -7,13 +9,11 @@ describe("Calculator", function() {
             calc.add(20);
             calc.add(22);
             expect(calc.value).toBe(42);
-            calc.clear();
         });
         it("should return 26", function() {
             calc.add(7);
             calc.add(19);
             expect(calc.value).toBe(26);
-            calc.clear();
         });
         it("should return an error if we don't supply numbers", function() {
             spyOn(window, "alert");
