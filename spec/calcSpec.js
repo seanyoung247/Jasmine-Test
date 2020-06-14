@@ -50,6 +50,43 @@ describe("Calculator", function() {
         });
     });
     //describes the tests for the Calculator.multiply() function
+    describe("multiplication tests", function() {
+        //correct return if multiplying by 0 number
+        it("should return 0", function() {
+            calc.multiply(5);
+            expect(calc.value).toBe(0);
+        });
+        //correct return if multiplying number by 0
+        it("should return 0", function() {
+            calc.set(5);
+            calc.multiply(0);
+            expect(calc.value).toBe(0);
+        });
+        //correct return if multiplying two positive numbers
+        it("should return 30", function() {
+            calc.set(5);
+            calc.multiply(6);
+            expect(calc.value).toBe(30);
+        });
+        //correct return if multiplying a positive and negative number
+        it("should return -30", function() {
+            calc.set(5);
+            calc.multiply(-6);
+            expect(calc.value).toBe(-30);
+        });
+        //correct return if multiplying two negative numbers
+        it("should return 30", function() {
+            calc.set(-5);
+            calc.multiply(-6);
+            expect(calc.value).toBe(30);
+        });
+        //non-number parameters
+        it("should return an error if we don't supply numbers", function() {
+            spyOn(window, "alert");
+            calc.multiply("Hitchhikers");
+            expect(window.alert).toHaveBeenCalledWith("Error!");
+        });
+    });
     //describes the tests for the Calculator.divide() function
 
     //describes the tests for the Calculator.clear() function
