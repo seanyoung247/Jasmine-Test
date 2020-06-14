@@ -87,7 +87,47 @@ describe("Calculator", function() {
             expect(window.alert).toHaveBeenCalledWith("Error!");
         });
     });
+
     //describes the tests for the Calculator.divide() function
+    describe("division tests", function() {
+        //correct return if divide two positive numbers, dividend greater than divisor
+        it("should return 2", function() {
+            calc.set(10);
+            calc.divide(5);
+            expect(calc.value).toBe(2);
+        });
+        //correct return if divide two positive numbers, dividend smaller than divisor
+        it("should return 0.5", function() {
+            calc.set(5);
+            calc.divide(10);
+            expect(calc.value).toBe(0.5);
+        });
+        //correct return if divide a positive and negative number
+        it("should return -2", function() {
+            calc.set(10);
+            calc.divide(-5);
+            expect(calc.value).toBe(-2);
+        });
+        //correct return if divide two negative numbers
+        it("should return 2", function() {
+            calc.set(-10);
+            calc.divide(-5);
+            expect(calc.value).toBe(2);
+        });
+        //correct return if divide by 0 number
+        it("should return an error if we attempt a divide by zero", function() {
+            //calc.value should be initialised to 0
+            spyOn(window, "alert");
+            calc.divide(15);
+            expect(window.alert).toHaveBeenCalledWith("Error!");
+        });
+        //non-number parameters
+        it("should return an error if we don't supply numbers", function() {
+            spyOn(window, "alert");
+            calc.divide("Hitchhikers");
+            expect(window.alert).toHaveBeenCalledWith("Error!");
+        });
+    });
 
     //describes the tests for the Calculator.clear() function
     describe("Clear tests", function() {

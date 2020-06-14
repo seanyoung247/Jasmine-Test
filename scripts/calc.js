@@ -29,6 +29,16 @@ Calculator.prototype.multiply = function(number) {
     }
 }
 
+//Divide value by number passed
+Calculator.prototype.divide = function(number) {
+    if ( (typeof(number) == "number") && (number != 0) && (this.value != 0) )
+    {
+        this.value /= number;
+    } else {
+        alert("Error!");
+    }
+}
+
 //Sets value to number passed
 Calculator.prototype.set = function(number) {
     if (typeof(number) == "number")
